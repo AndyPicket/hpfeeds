@@ -31,7 +31,7 @@ rec = {
 client = pymongo.MongoClient(host=os.getenv("MONGO_HOST"), port=int(os.getenv("MONGO_PORT")),username=os.getenv("MONGO_USER"),password=os.getenv("MONGO_PASSWORD"), authMechanism=os.getenv("MONGO_AUTH_MECHANISM"))
 #if os.getenv("MONGO_AUTH") == "true":
 #    client.hpfeeds.authenticate(os.getenv("MONGO_USER"), os.getenv("MONGO_PASSWORD"), mechanism=os.getenv("MONGO_AUTH_MECHANISM"))
-res = client.hpfeeds.auth_key.update({"identifier": ident}, {"$set": rec}, upsert=True)
+#res = client.hpfeeds.auth_key.update({"identifier": ident}, {"$set": rec}, upsert=True)
 client.fsync()
 client.close()
 
